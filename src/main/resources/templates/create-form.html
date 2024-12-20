@@ -1,15 +1,58 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>Getting Started: Serving Web Content</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create New Book</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 20px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    input[type="text"], input[type="number"] {
+        display: block;
+        margin-bottom: 10px;
+        padding: 10px;
+        width: 100%;
+        max-width: 400px;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+    }
+    input[type="submit"] {
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        margin-top: 15px;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+  </style>
 </head>
 <body>
+
+<h1>Create New Book</h1>
+
 <form method="post" action="/create">
-  <input type="text" placeholder="Book name" name="name"/>
-  <input type="text" placeholder="Book author" name="author"/>
-  <input type="text" placeholder="Number of pages" name="pages"/>
-  <input type="submit"/>
+  <label for="name">Book Name:</label>
+  <input type="text" id="name" placeholder="Enter book name" name="name" required/>
+
+  <label for="author">Author:</label>
+  <input type="text" id="author" placeholder="Enter author name" name="author" required/>
+
+  <label for="pages">Number of Pages:</label>
+  <input type="number" id="pages" placeholder="Enter number of pages" name="pages" required min="1"/>
+
+  <input type="submit" value="Create Book"/>
 </form>
+
 </body>
 </html>
